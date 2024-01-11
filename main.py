@@ -19,15 +19,17 @@ def msgs(message):
             telebot.types.InlineKeyboardButton(text='✧ - المطور 🌐', url='https://t.me/ELHYBA'),
             telebot.types.InlineKeyboardButton(text='✧ - قناة التحديثات', url='https://t.me/Source_Ze')))
             
+            
 @bot.message_handler(func=lambda message: True)
 def msgs(message):
     text = message.text
-    if text == "صور دينيه" or text == "صورة دينيه":
-        photo_url = "https://t.me/livequrann/" + str(random.randint(22, 221))
+    if text == "صورة دينيه" or text == "صور دينيه":
+        photo_url = "https://t.me/livequrann/" + str(random.randint(7, 276))
         bot.send_photo(message.chat.id, photo_url, caption="« صلي على سيدنا محمد ﷺ »", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
             telebot.types.InlineKeyboardButton(text='✧ - المطور 🌐', url='https://t.me/ELHYBA'),
-            telebot.types.InlineKeyboardButton(text='✧ - قناة التحديثات', url='https://t.me/Source_Ze')))            
-
+            telebot.types.InlineKeyboardButton(text='✧ - قناة التحديثات', url='https://t.me/Source_Ze')))
+            
+                                  
 print("تم تشغيل البوت لو وقف شي كلمني @ELHYBA!")
 bot.polling()
 
@@ -46,8 +48,22 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-#مبرمج الملف @Almortagel_12
-#مطور الملف @ELHYBA
+
+@app.on_message(command(["صور دينيه", "صورة دينيه"]))
+async def ihd(client: Client, message: Message):
+    rl = random.randint(24,618)
+    url = f"https://t.me/livequrann/{rl}"
+    await client.send_photo(message.chat.id,url,caption="« صلي على سيدنا محمد ﷺ »",parse_mode="html",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                ],
+            ]
+        )
+    )
+#مبرمج الملف @ELHYBA
 #جميع الحقوق محفوظه لسورس زد إي
     
 
